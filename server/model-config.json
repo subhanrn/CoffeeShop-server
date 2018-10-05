@@ -14,40 +14,40 @@
     ]
   },
   "User": {
-    "dataSource": "mysqldb"
+    "dataSource": "db"
   },
   "AccessToken": {
-    "dataSource": "mysqldb",
+    "dataSource": "db",
     "public": false
   },
   "ACL": {
-    "dataSource": "mysqldb",
+    "dataSource": "db",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "mysqldb",
+    "dataSource": "db",
     "public": false,
     "options": {
       "strictObjectIDCoercion": true
     }
   },
   "Role": {
-    "dataSource": "mysqldb",
+    "dataSource": "db",
     "public": false
   },
   "Message": {
     "dataSource": null
   },
   "CoffeeShop": {
-    "dataSource": "mysqldb",
+    "dataSource": "db",
     "public": true
   },
   "Review": {
-    "dataSource": "mysqldb",
+    "dataSource": "db",
     "public": true
   },
   "Reviewer": {
-    "dataSource": "mysqldb",
+    "dataSource": "db",
     "public": true
   }
 }
