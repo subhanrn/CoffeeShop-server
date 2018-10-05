@@ -2,15 +2,6 @@
   "db": {
     "name": "db",
     "connector": "memory"
-  },
-  "mysqldb": {
-    "host": "localhost",
-    "port": 3306,
-    "url": "",
-    "database": "latihan_loopback",
-    "password": "",
-    "name": "mysqldb",
-    "user": "root",
-    "connector": "mysql"
   }
+
 }
