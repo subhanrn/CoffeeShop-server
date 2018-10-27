@@ -4,19 +4,13 @@ var loopback = require('loopback');
 var boot = require('loopback-boot');
 
 var app = module.exports = loopback();
-var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080
-var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
 
 app.start = function () {
   // start the web server
-  return app.listen(server_port, server_ip_address, function () {
+  var port = process.env.PORT || 8000;
+  return app.listen(port, function () {
     app.emit('started');
-    var baseUrl = app.get('url').replace(/\/$/, '');
-    console.log('Web server listening at: %s', baseUrl);
-    if (app.get('loopback-component-explorer')) {
-      var explorerPath = app.get('loopback-component-explorer').mountPath;
-      console.log('Browse your REST API at %s%s', baseUrl, explorerPath);
-    }
+    console.log('Web server listening at: %s', app.get('url'));
   });
 };
 
@@ -26,6 +20,26 @@ boot(app, __dirname, function (err) {
   if (err) throw err;
 
   // start the server if `$ node server.js`
-  if (require.main === module)
+  if (require.main === module) {
+    app.use(loopback.token({
+      model: app.models.AccessToken,
+    }));
+    app.use((req, res, next) => {
+      const token = req.accessToken;
+
+      if (!token) {
+        return next();
+      }
+
+      const now = new Date();
+      if (now.getTime() - token.created.getTime() < 1000) {
+        return next();
+      }
+
+      req.accessToken.created = now; // eslint-disable-line
+      return req.accessToken.save(next);
+    });
     app.start();
+  }
+
 });

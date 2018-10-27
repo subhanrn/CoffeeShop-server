@@ -28,7 +28,8 @@
       "foreignKey": ""
     }
   },
-  "acls": [{
+  "acls": [
+    {
       "accessType": "*",
       "principalType": "ROLE",
       "principalId": "$authenticated",
