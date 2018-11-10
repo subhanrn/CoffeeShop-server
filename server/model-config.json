@@ -14,40 +14,40 @@
     ]
   },
   "User": {
-    "dataSource": "db"
+    "dataSource": "dbCoffeeHeroku"
   },
   "AccessToken": {
-    "dataSource": "db",
+    "dataSource": "dbCoffeeHeroku",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "dbCoffeeHeroku",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "dbCoffeeHeroku",
     "public": false,
     "options": {
       "strictObjectIDCoercion": true
     }
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "dbCoffeeHeroku",
     "public": false
   },
   "Message": {
     "dataSource": null
   },
   "CoffeeShop": {
-    "dataSource": "db",
+    "dataSource": "dbCoffeeHeroku",
     "public": true
   },
   "Review": {
-    "dataSource": "db",
+    "dataSource": "dbCoffeeHeroku",
     "public": true
   },
   "Reviewer": {
-    "dataSource": "db",
+    "dataSource": "dbCoffeeHeroku",
     "public": true
   }
 }

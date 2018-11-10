@@ -2,5 +2,10 @@
   "db": {
     "name": "db",
     "connector": "memory"
+  },
+  "dbCoffeeHeroku": {
+    "url": "${POSTGRE_HEROKU_COFFEE}",
+    "name": "dbCoffeeHeroku",
+    "connector": "postgresql"
   }
 }
