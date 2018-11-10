@@ -1,5 +1,5 @@
 {
-  "name": "lb-part3",
+  "name": "coffeeshop-server",
   "version": "1.0.0",
   "main": "server/server.js",
   "engines": {
@@ -21,6 +21,7 @@
     "loopback-component-explorer": "^6.0.0",
     "loopback-connector-mysql": "^2.4.1",
     "loopback-connector-oracle": "^4.1.1",
+    "loopback-connector-postgresql": "^3.5.0",
     "serve-favicon": "^2.0.1",
     "strong-error-handler": "^3.0.0"
   },
@@ -34,5 +35,5 @@
     "url": ""
   },
   "license": "UNLICENSED",
-  "description": "lb-part3"
+  "description": "coffeeshop-server"
 }
