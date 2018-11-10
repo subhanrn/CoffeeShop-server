@@ -4,7 +4,7 @@
     "connector": "memory"
   },
   "dbCoffeeHeroku": {
-    "url": "${POSTGRE_HEROKU_COFFEE}",
+    "url": "${DATABASE_URL}",
     "name": "dbCoffeeHeroku",
     "connector": "postgresql"
   }
