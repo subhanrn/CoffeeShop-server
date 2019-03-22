@@ -1,13 +1,34 @@
 'use strict';
 
-module.exports = function (Coffeeshop) {
-  Coffeeshop.status = function (cb) {
-    var currentDate = new Date();
-    var currentHour = currentDate.getHours();
-    var OPEN_HOUR = 6;
-    var CLOSE_HOUR = 20;
+module.exports = (Coffeeshop) => {
+  Coffeeshop.remoteMethod('status', {
+    accepts: [
+      {
+        arg: 'cont',
+        type: 'object',
+        required: true,
+        http: ctx => {
+          return ctx && ctx.req;
+        },
+      },
+    ],
+    http: {
+      path: '/status',
+      verb: 'get',
+    },
+    returns: {
+      arg: 'status',
+      type: 'string',
+    },
+  });
+
+  Coffeeshop.status = (cont, cb) => {
+    const currentDate = new Date();
+    const currentHour = currentDate.getHours();
+    const OPEN_HOUR = 6;
+    const CLOSE_HOUR = 20;
     console.log('Current hour is %d', currentHour);
-    var response;
+    let response;
     if (currentHour >= OPEN_HOUR && currentHour < CLOSE_HOUR) {
       response = 'We are open for business.';
     } else {
@@ -16,56 +37,36 @@ module.exports = function (Coffeeshop) {
     cb(null, response);
   };
 
-
-  Coffeeshop.remoteMethod(
-    'status', {
-      http: {
-        path: '/status',
-        verb: 'get'
-      },
-      returns: {
-        arg: 'status',
-        type: 'string'
-      }
-    }
-  );
-
-
-  Coffeeshop.getName = function (shopId, cb) {
-    Coffeeshop.findById(shopId, function (err, instance) {
+  Coffeeshop.getName = (shopId, cb) => {
+    Coffeeshop.findById(shopId, (err, instance) => {
+      let response;
       try {
-        var response = "Name of coffee shop is " + instance.name;
+        response = 'Name of coffee shop is ' + instance.name;
         cb(null, response);
         // console.log(response);
       } catch (err) {
-        response = "Not Found"
+        response = 'Not Found';
         cb(response);
         // console.log('error bro');
       }
-
     });
   };
 
-
-  Coffeeshop.remoteMethod(
-    'getName', {
+  Coffeeshop.remoteMethod('getName', {
+    http: {
+      path: '/getname',
+      verb: 'get',
+    },
+    accepts: {
+      arg: 'id',
+      type: 'number',
       http: {
-        path: '/getname',
-        verb: 'get'
+        source: 'query',
       },
-      accepts: {
-        arg: 'id',
-        type: 'number',
-        http: {
-          source: 'query'
-        }
-      },
-      returns: {
-        arg: 'name',
-        type: 'string'
-      }
-    }
-  );
-
-
+    },
+    returns: {
+      arg: 'name',
+      type: 'string',
+    },
+  });
 };
