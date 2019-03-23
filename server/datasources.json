@@ -4,13 +4,8 @@
     "connector": "memory"
   },
   "dbCoffeeHeroku": {
-    "host": "localhost",
-    "port": 3306,
-    "url": "",
-    "database": "coffee",
-    "password": "",
+    "url": "${POSTGRE_HEROKU_COFFEE}",
     "name": "dbCoffeeHeroku",
-    "user": "root",
-    "connector": "mysql"
+    "connector": "postgresql"
   }
 }
