@@ -12,22 +12,22 @@
     "build:sdk": "./node_modules/.bin/lb-sdk server/server.js ./client/sdk -l angular2 -d ng2web -i disabled"
   },
   "dependencies": {
-    "async": "^2.6.1",
-    "compression": "^1.0.3",
-    "cors": "^2.5.2",
-    "helmet": "^3.10.0",
-    "loopback": "^3.19.0",
+    "async": "^2.6.2",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "helmet": "^3.16.0",
+    "loopback": "^3.25.1",
     "loopback-boot": "^2.6.5",
-    "loopback-component-explorer": "^6.0.0",
+    "loopback-component-explorer": "^6.3.1",
     "loopback-connector-mysql": "^2.4.1",
-    "loopback-connector-oracle": "^4.1.1",
-    "loopback-connector-postgresql": "^3.5.0",
+    "loopback-connector-oracle": "^4.1.2",
+    "loopback-connector-postgresql": "^3.6.0",
     "serve-favicon": "^2.0.1",
     "strong-error-handler": "^3.0.0"
   },
   "devDependencies": {
     "@mean-expert/loopback-sdk-builder": "^2.3.1",
-    "eslint": "^3.17.1",
+    "eslint": "^3.19.0",
     "eslint-config-loopback": "^8.0.0"
   },
   "repository": {
