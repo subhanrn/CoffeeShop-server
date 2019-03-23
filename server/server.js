@@ -7,7 +7,7 @@ const app = module.exports = loopback();
 
 app.start = () => {
   // start the web server
-  const port = process.env.PORT || 3030;
+  const port = process.env.PORT || 3000;
   return app.listen(port, () => {
     app.emit('started');
     console.log('Web server listening at: %s', app.get('url'));
