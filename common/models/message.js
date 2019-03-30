@@ -1,9 +1,9 @@
-'use strict';
+"use strict";
 module.exports = Message => {
   Message.greet = (msg, cb) => {
     process.nextTick(() => {
-      msg = msg || 'hello';
-      cb(null, 'Sender says ' + msg + ' to receiver');
+      msg = msg || "hello";
+      cb(null, "Sender says " + msg + " to receiver");
     });
   };
 };
