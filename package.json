@@ -6,10 +6,22 @@
     "node": "10.x"
   },
   "scripts": {
+    "format": "prettier {common,server}/**/*.{js,jsx,json,ts,tsx,css,scss,md,html} --write",
+    "precommit": "lint-staged",
     "lint": "eslint .",
     "start": "node .",
     "posttest": "npm run lint",
     "build:sdk": "./node_modules/.bin/lb-sdk server/server.js ./client/sdk -l angular2 -d ng2web -i disabled"
+  },
+  "lint-staged": {
+    "{src,e2e}/**/*.{js,jsx,ts,tsx}": [
+      "npm run lint",
+      "git add"
+    ],
+    "{src,e2e}/**/*.{js,jsx,ts,tsx,css,scss,md}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "dependencies": {
     "async": "^2.6.2",
@@ -23,7 +35,8 @@
     "loopback-connector-oracle": "^4.1.2",
     "loopback-connector-postgresql": "^3.6.0",
     "serve-favicon": "^2.0.1",
-    "strong-error-handler": "^3.0.0"
+    "strong-error-handler": "^3.0.0",
+    "eslint-config-prettier": "^2.9.0"
   },
   "devDependencies": {
     "@mean-expert/loopback-sdk-builder": "^2.3.1",

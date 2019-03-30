@@ -1,5 +1,5 @@
 'use strict';
-module.exports = (Message) => {
+module.exports = Message => {
   Message.greet = (msg, cb) => {
     process.nextTick(() => {
       msg = msg || 'hello';

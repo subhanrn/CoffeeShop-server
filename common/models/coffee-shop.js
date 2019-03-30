@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = (Coffeeshop) => {
+module.exports = Coffeeshop => {
   Coffeeshop.remoteMethod('status', {
     accepts: [
       {
