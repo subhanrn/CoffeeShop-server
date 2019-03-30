@@ -2,7 +2,7 @@
 const server = require('./server');
 const ds = server.dataSources.dbCoffeeHeroku;
 const lbTables = [
-  'User',
+  // 'User',
   'AccessToken',
   'ACL',
   'RoleMapping',

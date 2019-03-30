@@ -28,7 +28,7 @@ module.exports = Review => {
     const accessToken = cont.accessToken;
     const userId = accessToken.userId;
     // const review = app.models.Review;
-    let myReviews = await new Promise((resolve, reject) => {
+    return await new Promise((resolve, reject) => {
       Review.find({ where: { publisherId: userId } }, (err, result) => {
         if (err) {
           reject(err);
@@ -37,7 +37,5 @@ module.exports = Review => {
         }
       });
     });
-
-    return myReviews;
   };
 };

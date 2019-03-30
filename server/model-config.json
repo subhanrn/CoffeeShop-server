@@ -14,7 +14,8 @@
     ]
   },
   "User": {
-    "dataSource": "dbCoffeeHeroku"
+    "dataSource": "db",
+    "public": false
   },
   "AccessToken": {
     "dataSource": "dbCoffeeHeroku",
