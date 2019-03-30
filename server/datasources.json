@@ -4,7 +4,7 @@
     "connector": "memory"
   },
   "dbCoffeeHeroku": {
-    "url": "postgres://xkhnmgafdpqwiy:f9bdf1aba302fa0758077fffe217c05e1ed9f676376f6b1a4c6855963321b63c@ec2-107-21-93-132.compute-1.amazonaws.com:5432/da9d6hvd1ce5u5?ssl=true",
+    "url": "${POSTGRE_HEROKU_COFFEE}",
     "name": "dbCoffeeHeroku",
     "connector": "postgresql"
   }
