@@ -26,6 +26,7 @@ module.exports = Review => {
   Review.getMyReview = async cont => {
     const accessToken = await cont.accessToken;
     const userId = accessToken.userId;
+    var ada ='ada'
     return userId;
   };
 };
