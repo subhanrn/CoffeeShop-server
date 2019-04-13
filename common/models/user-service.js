@@ -12,8 +12,8 @@ module.exports = (UserService) => {
     }],
     returns: {
       arg: 'return',
-      type: 'any',
-      root: true,
+      type: 'Object',
+      root: false,
     },
     http: {
       path: '/createUser',
@@ -46,8 +46,8 @@ module.exports = (UserService) => {
     }],
     returns: {
       arg: 'return',
-      type: 'any',
-      root: true,
+      type: 'Object',
+      root: false,
     },
     http: {
       path: '/signIn',
@@ -78,8 +78,8 @@ module.exports = (UserService) => {
     }],
     returns: {
       arg: 'return',
-      type: 'any',
-      root: true,
+      type: 'Object',
+      root: false,
     },
     http: {
       path: '/signOut',

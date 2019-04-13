@@ -6,8 +6,8 @@ module.exports = (CoffeeService) => {
     accepts: [],
     returns: {
       arg: 'return',
-      type: 'any',
-      root: true,
+      type: 'Object',
+      root: false,
     },
     http: {
       path: '/findAllCoffeeShop',
@@ -37,8 +37,8 @@ module.exports = (CoffeeService) => {
     }],
     returns: {
       arg: 'return',
-      type: 'any',
-      root: true,
+      type: 'Object',
+      root: false,
     },
     http: {
       path: '/findByIdCoffeeShop',
@@ -75,8 +75,8 @@ module.exports = (CoffeeService) => {
     }],
     returns: {
       arg: 'return',
-      type: 'any',
-      root: true,
+      type: 'Object',
+      root: false,
     },
     http: {
       path: '/createCoffeeShop',
@@ -108,8 +108,8 @@ module.exports = (CoffeeService) => {
     }],
     returns: {
       arg: 'return',
-      type: 'any',
-      root: true,
+      type: 'Object',
+      root: false,
     },
     http: {
       path: '/updateByIdCoffeeShop',
@@ -142,8 +142,8 @@ module.exports = (CoffeeService) => {
     }],
     returns: {
       arg: 'return',
-      type: 'any',
-      root: true,
+      type: 'Object',
+      root: false,
     },
     http: {
       path: '/deleteByIdCoffeeShop',
@@ -169,8 +169,8 @@ module.exports = (CoffeeService) => {
     accepts: [],
     returns: {
       arg: 'return',
-      type: 'any',
-      root: true,
+      type: 'Object',
+      root: false,
     },
     http: {
       path: '/findAllReview',
@@ -204,8 +204,8 @@ module.exports = (CoffeeService) => {
     }],
     returns: {
       arg: 'return',
-      type: 'any',
-      root: true,
+      type: 'Object',
+      root: false,
     },
     http: {
       path: '/upsertWithWhereReview',
@@ -245,8 +245,8 @@ module.exports = (CoffeeService) => {
     }],
     returns: {
       arg: 'return',
-      type: 'any',
-      root: true,
+      type: 'Object',
+      root: false,
     },
     http: {
       path: '/getMyReview',
