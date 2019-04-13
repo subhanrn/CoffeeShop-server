@@ -1,7 +1,8 @@
 const loopback = require('loopback');
 const boot = require('loopback-boot');
 
-const app = loopback();
+// eslint-disable-next-line no-multi-assign
+const app = module.exports = loopback();
 
 app.start = () => {
   // start the web server
