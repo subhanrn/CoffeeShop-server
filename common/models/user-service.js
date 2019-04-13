@@ -6,6 +6,9 @@ module.exports = (UserService) => {
       arg: 'params',
       type: 'Object',
       required: true,
+      http: {
+        source: 'body',
+      },
     }],
     returns: {
       arg: 'return',
@@ -37,6 +40,9 @@ module.exports = (UserService) => {
       arg: 'params',
       type: 'Object',
       required: true,
+      http: {
+        source: 'body',
+      },
     }],
     returns: {
       arg: 'return',

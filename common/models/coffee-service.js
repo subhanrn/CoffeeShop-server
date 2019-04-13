@@ -69,6 +69,9 @@ module.exports = (CoffeeService) => {
       arg: 'params',
       type: 'Object',
       required: true,
+      http: {
+        source: 'body',
+      },
     }],
     returns: {
       arg: 'return',
@@ -99,6 +102,9 @@ module.exports = (CoffeeService) => {
       arg: 'params',
       type: 'Object',
       required: true,
+      http: {
+        source: 'body',
+      },
     }],
     returns: {
       arg: 'return',
@@ -192,6 +198,9 @@ module.exports = (CoffeeService) => {
       arg: 'params',
       type: 'Object',
       required: true,
+      http: {
+        source: 'body',
+      },
     }],
     returns: {
       arg: 'return',
