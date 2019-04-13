@@ -1,5 +1,3 @@
-const app = require('../../server/server');
-
 module.exports = (CoffeeService) => {
   const CoffeeServices = CoffeeService;
 
@@ -18,7 +16,7 @@ module.exports = (CoffeeService) => {
   });
 
   CoffeeServices.findAllCoffeeShop = () => {
-    const coffeeShopModel = app.models.CoffeeShop;
+    const coffeeShopModel = CoffeeServices.app.models.CoffeeShop;
     return new Promise((res, rej) => {
       coffeeShopModel.find(null, (err, result) => {
         if (err) {
@@ -49,7 +47,7 @@ module.exports = (CoffeeService) => {
   });
 
   CoffeeServices.findByIdCoffeeShop = (id) => {
-    const coffeeShopModel = app.models.CoffeeShop;
+    const coffeeShopModel = CoffeeServices.app.models.CoffeeShop;
     return new Promise((res, rej) => {
       coffeeShopModel.find({
         where: {
@@ -84,7 +82,7 @@ module.exports = (CoffeeService) => {
   });
 
   CoffeeServices.createCoffeeShop = (params) => {
-    const coffeeShopModel = app.models.CoffeeShop;
+    const coffeeShopModel = CoffeeServices.app.models.CoffeeShop;
     return new Promise((res, rej) => {
       coffeeShopModel.create(params, (err, result) => {
         if (err) {
@@ -114,7 +112,7 @@ module.exports = (CoffeeService) => {
   });
 
   CoffeeServices.updateByIdCoffeeShop = (params) => {
-    const coffeeShopModel = app.models.CoffeeShop;
+    const coffeeShopModel = CoffeeServices.app.models.CoffeeShop;
     return new Promise((res, rej) => {
       coffeeShopModel.replaceById(params.id, {
         name: params.name,
@@ -148,7 +146,7 @@ module.exports = (CoffeeService) => {
   });
 
   CoffeeServices.deleteByIdCoffeeShop = (id) => {
-    const coffeeShopModel = app.models.CoffeeShop;
+    const coffeeShopModel = CoffeeServices.app.models.CoffeeShop;
     return new Promise((res, rej) => {
       coffeeShopModel.destroyById(id, (err, result) => {
         if (err) {
@@ -175,7 +173,7 @@ module.exports = (CoffeeService) => {
   });
 
   CoffeeServices.findAllReview = () => {
-    const reviewModel = app.models.Review;
+    const reviewModel = CoffeeServices.app.models.Review;
     return new Promise((res, rej) => {
       reviewModel.find({
         include: ['coffeeShop', 'reviewer'],
@@ -188,5 +186,4 @@ module.exports = (CoffeeService) => {
       });
     });
   };
-  
 };

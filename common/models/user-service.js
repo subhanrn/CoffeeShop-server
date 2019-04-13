@@ -1,5 +1,3 @@
-const app = require('../../server/server');
-
 module.exports = (UserService) => {
   const Userservices = UserService;
 
@@ -21,7 +19,7 @@ module.exports = (UserService) => {
   });
 
   Userservices.createUser = (params) => {
-    const reviewerModel = app.models.Reviewer;
+    const reviewerModel = Userservices.app.models.Reviewer;
     return new Promise((res, rej) => {
       reviewerModel.create(params, (err, result) => {
         if (err) {
@@ -52,7 +50,7 @@ module.exports = (UserService) => {
   });
 
   Userservices.signIn = (params) => {
-    const reviewerModel = app.models.Reviewer;
+    const reviewerModel = Userservices.app.models.Reviewer;
     return new Promise((res, rej) => {
       reviewerModel.login(params, (err, result) => {
         if (err) {
@@ -84,7 +82,7 @@ module.exports = (UserService) => {
   });
 
   Userservices.signOut = (cont) => {
-    const accessTokenModel = app.models.AccessToken;
+    const accessTokenModel = Userservices.app.models.AccessToken;
     const {
       accessToken,
     } = cont;

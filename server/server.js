@@ -1,9 +1,7 @@
-'use strict';
-
 const loopback = require('loopback');
 const boot = require('loopback-boot');
 
-const app = module.exports = loopback();
+const app = loopback();
 
 app.start = () => {
   // start the web server

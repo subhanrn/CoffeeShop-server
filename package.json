@@ -15,12 +15,8 @@
     "build:swagger": "openapi-generator generate -i swag.yml -g dart -DbrowserClient=false -o ./client"
   },
   "lint-staged": {
-    "{src,e2e}/**/*.{js,jsx,ts,tsx}": [
+    "{common,server}/**/*.{js,jsx,ts,tsx}": [
       "npm run lint",
-      "git add"
-    ],
-    "{src,e2e}/**/*.{js,jsx,ts,tsx,css,scss,md}": [
-      "prettier --write",
       "git add"
     ]
   },
@@ -35,6 +31,7 @@
     "loopback-connector-mysql": "^5.3.1",
     "loopback-connector-oracle": "^4.1.2",
     "loopback-connector-postgresql": "^3.6.1",
+    "mkdirp": "^0.5.1",
     "serve-favicon": "^2.5.0",
     "strong-error-handler": "^3.2.0"
   },
