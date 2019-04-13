@@ -6,7 +6,7 @@ module.exports = (CoffeeService) => {
     accepts: [],
     returns: {
       arg: 'return',
-      type: 'object',
+      type: 'any',
       root: true,
     },
     http: {
@@ -32,12 +32,12 @@ module.exports = (CoffeeService) => {
   CoffeeServices.remoteMethod('findByIdCoffeeShop', {
     accepts: [{
       arg: 'id',
-      type: 'string',
+      type: 'String',
       required: true,
     }],
     returns: {
       arg: 'return',
-      type: 'object',
+      type: 'any',
       root: true,
     },
     http: {
@@ -67,12 +67,12 @@ module.exports = (CoffeeService) => {
   CoffeeServices.remoteMethod('createCoffeeShop', {
     accepts: [{
       arg: 'params',
-      type: 'object',
+      type: 'Object',
       required: true,
     }],
     returns: {
       arg: 'return',
-      type: 'object',
+      type: 'any',
       root: true,
     },
     http: {
@@ -97,12 +97,12 @@ module.exports = (CoffeeService) => {
   CoffeeServices.remoteMethod('updateByIdCoffeeShop', {
     accepts: [{
       arg: 'params',
-      type: 'object',
+      type: 'Object',
       required: true,
     }],
     returns: {
       arg: 'return',
-      type: 'object',
+      type: 'any',
       root: true,
     },
     http: {
@@ -131,12 +131,12 @@ module.exports = (CoffeeService) => {
   CoffeeServices.remoteMethod('deleteByIdCoffeeShop', {
     accepts: [{
       arg: 'id',
-      type: 'string',
+      type: 'String',
       required: true,
     }],
     returns: {
       arg: 'return',
-      type: 'object',
+      type: 'any',
       root: true,
     },
     http: {
@@ -163,7 +163,7 @@ module.exports = (CoffeeService) => {
     accepts: [],
     returns: {
       arg: 'return',
-      type: 'object',
+      type: 'any',
       root: true,
     },
     http: {
@@ -190,12 +190,12 @@ module.exports = (CoffeeService) => {
   CoffeeServices.remoteMethod('upsertWithWhereReview', {
     accepts: [{
       arg: 'params',
-      type: 'object',
+      type: 'Object',
       required: true,
     }],
     returns: {
       arg: 'return',
-      type: 'object',
+      type: 'any',
       root: true,
     },
     http: {
@@ -230,13 +230,13 @@ module.exports = (CoffeeService) => {
   CoffeeServices.remoteMethod('getMyReview', {
     accepts: [{
       arg: 'cont',
-      type: 'object',
+      type: 'Object',
       required: true,
       http: ctx => ctx && ctx.req,
     }],
     returns: {
       arg: 'return',
-      type: 'array',
+      type: 'any',
       root: true,
     },
     http: {

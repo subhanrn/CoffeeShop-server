@@ -4,12 +4,12 @@ module.exports = (UserService) => {
   Userservices.remoteMethod('createUser', {
     accepts: [{
       arg: 'params',
-      type: 'object',
+      type: 'Object',
       required: true,
     }],
     returns: {
       arg: 'return',
-      type: 'object',
+      type: 'any',
       root: true,
     },
     http: {
@@ -35,12 +35,12 @@ module.exports = (UserService) => {
   Userservices.remoteMethod('signIn', {
     accepts: [{
       arg: 'params',
-      type: 'object',
+      type: 'Object',
       required: true,
     }],
     returns: {
       arg: 'return',
-      type: 'object',
+      type: 'any',
       root: true,
     },
     http: {
@@ -66,13 +66,13 @@ module.exports = (UserService) => {
   Userservices.remoteMethod('signOut', {
     accepts: [{
       arg: 'cont',
-      type: 'object',
+      type: 'Object',
       required: true,
       http: ctx => ctx && ctx.req,
     }],
     returns: {
       arg: 'return',
-      type: 'object',
+      type: 'any',
       root: true,
     },
     http: {
