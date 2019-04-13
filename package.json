@@ -12,7 +12,7 @@
     "start": "node .",
     "posttest": "npm run lint",
     "build:sdk": "./node_modules/.bin/lb-sdk server/server.js ./client/sdk -l angular2 -d ng2web -i disabled",
-    "build:swagger": "openapi-generator generate -i swag.yml -g dart -DbrowserClient=false -o ./client"
+    "build:swaggerdart": "./node_modules/.bin/openapi-generator generate -i http://localhost:3000/explorer/swagger.json -g dart -DbrowserClient=false -o ./client"
   },
   "lint-staged": {
     "{common,server}/**/*.{js,jsx,ts,tsx}": [
