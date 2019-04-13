@@ -1,7 +1,7 @@
 {
   "extends": [
     "loopback",
-    "prettier"
+    "airbnb-base"
   ],
   "parserOptions": {
     "ecmaVersion": 8

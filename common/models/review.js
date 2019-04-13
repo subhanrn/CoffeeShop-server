@@ -1,35 +1,37 @@
-"use strict";
-
-module.exports = Review => {
-
-  Review.remoteMethod("getMyReview", {
-    accepts: [
-      {
-        arg: "cont",
-        type: "object",
-        required: true,
-        http: ctx => {
-          return ctx && ctx.req;
-        }
-      }
-    ],
+module.exports = (Review) => {
+  const Reviews = Review;
+  Reviews.remoteMethod('getMyReview', {
+    accepts: [{
+      arg: 'cont',
+      type: 'object',
+      required: true,
+      http: ctx => ctx && ctx.req,
+    }],
     returns: {
-      arg: "return",
-      type: "array",
-      root: true
+      arg: 'return',
+      type: 'array',
+      root: true,
     },
     http: {
-      path: "/getMyReview",
-      verb: "get"
-    }
+      path: '/getMyReview',
+      verb: 'get',
+    },
   });
 
-  Review.getMyReview = async cont => {
-    const accessToken = cont.accessToken;
-    const userId = accessToken.userId;
+  Reviews.getMyReview = async (cont) => {
+    const {
+      accessToken,
+    } = cont;
+    const {
+      userId,
+    } = accessToken;
     // const review = app.models.Review;
-    return await new Promise((resolve, reject) => {
-      Review.find({ where: { publisherId: userId } }, (err, result) => {
+    await new Promise((resolve, reject) => {
+      Review.find({
+        where: {
+          publisherId: userId,
+        },
+      }, (err, result) => {
         if (err) {
           reject(err);
         } else {

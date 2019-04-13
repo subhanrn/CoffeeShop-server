@@ -36,19 +36,24 @@
     "dataSource": "dbCoffeeHeroku",
     "public": false
   },
-  "Message": {
-    "dataSource": null
-  },
   "CoffeeShop": {
     "dataSource": "dbCoffeeHeroku",
-    "public": true
+    "public": false
   },
   "Review": {
     "dataSource": "dbCoffeeHeroku",
-    "public": true
+    "public": false
   },
   "Reviewer": {
     "dataSource": "dbCoffeeHeroku",
+    "public": false
+  },
+  "UserService": {
+    "dataSource": null,
+    "public": true
+  },
+  "CoffeeService": {
+    "dataSource": null,
     "public": true
   }
 }
