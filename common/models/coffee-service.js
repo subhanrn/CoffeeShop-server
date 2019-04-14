@@ -1,18 +1,17 @@
-module.exports = (CoffeeService) => {
+module.exports = CoffeeService => {
   const CoffeeServices = CoffeeService;
 
-
-  CoffeeServices.remoteMethod('findAllCoffeeShop', {
+  CoffeeServices.remoteMethod("findAllCoffeeShop", {
     accepts: [],
     returns: {
-      arg: 'return',
-      type: 'Object',
-      root: false,
+      arg: "return",
+      type: "Object",
+      root: false
     },
     http: {
-      path: '/findAllCoffeeShop',
-      verb: 'get',
-    },
+      path: "/findAllCoffeeShop",
+      verb: "get"
+    }
   });
 
   CoffeeServices.findAllCoffeeShop = () => {
@@ -28,63 +27,68 @@ module.exports = (CoffeeService) => {
     });
   };
 
-
-  CoffeeServices.remoteMethod('findByIdCoffeeShop', {
-    accepts: [{
-      arg: 'id',
-      type: 'String',
-      required: true,
-    }],
+  CoffeeServices.remoteMethod("findByIdCoffeeShop", {
+    accepts: [
+      {
+        arg: "id",
+        type: "String",
+        required: true
+      }
+    ],
     returns: {
-      arg: 'return',
-      type: 'Object',
-      root: false,
+      arg: "return",
+      type: "Object",
+      root: false
     },
     http: {
-      path: '/findByIdCoffeeShop',
-      verb: 'get',
-    },
+      path: "/findByIdCoffeeShop",
+      verb: "get"
+    }
   });
 
-  CoffeeServices.findByIdCoffeeShop = (id) => {
+  CoffeeServices.findByIdCoffeeShop = id => {
     const coffeeShopModel = CoffeeServices.app.models.CoffeeShop;
     return new Promise((res, rej) => {
-      coffeeShopModel.find({
-        where: {
-          id,
+      coffeeShopModel.find(
+        {
+          where: {
+            id
+          }
         },
-      }, (err, result) => {
-        if (err) {
-          rej(err);
-        } else {
-          res(result);
+        (err, result) => {
+          if (err) {
+            rej(err);
+          } else {
+            res(result);
+          }
         }
-      });
+      );
     });
   };
 
-
-  CoffeeServices.remoteMethod('createCoffeeShop', {
-    accepts: [{
-      arg: 'params',
-      type: 'Object',
-      required: true,
-      http: {
-        source: 'body',
-      },
-    }],
+  CoffeeServices.remoteMethod("createCoffeeShop", {
+    accepts: [
+      {
+        arg: "params",
+        type: "Object",
+        required: true,
+        http: {
+          source: "body"
+        }
+      }
+    ],
     returns: {
-      arg: 'return',
-      type: 'Object',
-      root: false,
+      arg: "return",
+      type: "Object",
+      root: false
     },
     http: {
-      path: '/createCoffeeShop',
-      verb: 'post',
-    },
+      path: "/createCoffeeShop",
+      verb: "post"
+    }
   });
 
-  CoffeeServices.createCoffeeShop = (params) => {
+  CoffeeServices.createCoffeeShop = params => {
     const coffeeShopModel = CoffeeServices.app.models.CoffeeShop;
     return new Promise((res, rej) => {
       coffeeShopModel.create(params, (err, result) => {
@@ -97,61 +101,68 @@ module.exports = (CoffeeService) => {
     });
   };
 
-  CoffeeServices.remoteMethod('updateByIdCoffeeShop', {
-    accepts: [{
-      arg: 'params',
-      type: 'Object',
-      required: true,
-      http: {
-        source: 'body',
-      },
-    }],
+  CoffeeServices.remoteMethod("updateByIdCoffeeShop", {
+    accepts: [
+      {
+        arg: "params",
+        type: "Object",
+        required: true,
+        http: {
+          source: "body"
+        }
+      }
+    ],
     returns: {
-      arg: 'return',
-      type: 'Object',
-      root: false,
+      arg: "return",
+      type: "Object",
+      root: false
     },
     http: {
-      path: '/updateByIdCoffeeShop',
-      verb: 'post',
-    },
+      path: "/updateByIdCoffeeShop",
+      verb: "post"
+    }
   });
 
-  CoffeeServices.updateByIdCoffeeShop = (params) => {
+  CoffeeServices.updateByIdCoffeeShop = params => {
     const coffeeShopModel = CoffeeServices.app.models.CoffeeShop;
     return new Promise((res, rej) => {
-      coffeeShopModel.replaceById(params.id, {
-        name: params.name,
-        city: params.city,
-      }, (err, result) => {
-        if (err) {
-          rej(err);
-        } else {
-          res(result);
+      coffeeShopModel.replaceById(
+        params.id,
+        {
+          name: params.name,
+          city: params.city
+        },
+        (err, result) => {
+          if (err) {
+            rej(err);
+          } else {
+            res(result);
+          }
         }
-      });
+      );
     });
   };
 
-
-  CoffeeServices.remoteMethod('deleteByIdCoffeeShop', {
-    accepts: [{
-      arg: 'id',
-      type: 'String',
-      required: true,
-    }],
+  CoffeeServices.remoteMethod("deleteByIdCoffeeShop", {
+    accepts: [
+      {
+        arg: "id",
+        type: "String",
+        required: true
+      }
+    ],
     returns: {
-      arg: 'return',
-      type: 'Object',
-      root: false,
+      arg: "return",
+      type: "Object",
+      root: false
     },
     http: {
-      path: '/deleteByIdCoffeeShop',
-      verb: 'get',
-    },
+      path: "/deleteByIdCoffeeShop",
+      verb: "get"
+    }
   });
 
-  CoffeeServices.deleteByIdCoffeeShop = (id) => {
+  CoffeeServices.deleteByIdCoffeeShop = id => {
     const coffeeShopModel = CoffeeServices.app.models.CoffeeShop;
     return new Promise((res, rej) => {
       coffeeShopModel.destroyById(id, (err, result) => {
@@ -164,116 +175,124 @@ module.exports = (CoffeeService) => {
     });
   };
 
-
-  CoffeeServices.remoteMethod('findAllReview', {
+  CoffeeServices.remoteMethod("findAllReview", {
     accepts: [],
     returns: {
-      arg: 'return',
-      type: 'Object',
-      root: false,
+      arg: "return",
+      type: "Object",
+      root: false
     },
     http: {
-      path: '/findAllReview',
-      verb: 'get',
-    },
+      path: "/findAllReview",
+      verb: "get"
+    }
   });
 
   CoffeeServices.findAllReview = () => {
     const reviewModel = CoffeeServices.app.models.Review;
     return new Promise((res, rej) => {
-      reviewModel.find({
-        include: ['coffeeShop', 'reviewer'],
-      }, (err, result) => {
-        if (err) {
-          rej(err);
-        } else {
-          res(result);
+      reviewModel.find(
+        {
+          include: ["coffeeShop", "reviewer"]
+        },
+        (err, result) => {
+          if (err) {
+            rej(err);
+          } else {
+            res(result);
+          }
         }
-      });
+      );
     });
   };
 
-  CoffeeServices.remoteMethod('upsertWithWhereReview', {
-    accepts: [{
-      arg: 'params',
-      type: 'Object',
-      required: true,
-      http: {
-        source: 'body',
-      },
-    }],
+  CoffeeServices.remoteMethod("upsertWithWhereReview", {
+    accepts: [
+      {
+        arg: "params",
+        type: "Object",
+        required: true,
+        http: {
+          source: "body"
+        }
+      }
+    ],
     returns: {
-      arg: 'return',
-      type: 'Object',
-      root: false,
+      arg: "return",
+      type: "Object",
+      root: false
     },
     http: {
-      path: '/upsertWithWhereReview',
-      verb: 'post',
-    },
+      path: "/upsertWithWhereReview",
+      verb: "post"
+    }
   });
 
-  CoffeeServices.upsertWithWhereReview = (params) => {
+  CoffeeServices.upsertWithWhereReview = params => {
     const reviewModel = CoffeeServices.app.models.Review;
     return new Promise((res, rej) => {
-      reviewModel.upsertWithWhere({
-        coffeeShopId: params.coffeeShopId,
-        publisherId: params.publisherId,
-      }, {
-        date: Date.now(),
-        rating: params.rating,
-        comments: params.comments,
-        coffeeShopId: params.coffeeShopId,
-        publisherId: params.publisherId,
-      }, (err, result) => {
-        if (err) {
-          rej(err);
-        } else {
-          res(result);
+      reviewModel.upsertWithWhere(
+        {
+          coffeeShopId: params.coffeeShopId,
+          publisherId: params.publisherId
+        },
+        {
+          date: Date.now(),
+          rating: params.rating,
+          comments: params.comments,
+          coffeeShopId: params.coffeeShopId,
+          publisherId: params.publisherId
+        },
+        (err, result) => {
+          if (err) {
+            rej(err);
+          } else {
+            res(result);
+          }
         }
-      });
+      );
     });
   };
 
-
-  CoffeeServices.remoteMethod('getMyReview', {
-    accepts: [{
-      arg: 'cont',
-      type: 'Object',
-      required: true,
-      http: ctx => ctx && ctx.req,
-    }],
+  CoffeeServices.remoteMethod("getMyReview", {
+    accepts: [
+      {
+        arg: "cont",
+        type: "Object",
+        required: true,
+        http: ctx => ctx && ctx.req
+      }
+    ],
     returns: {
-      arg: 'return',
-      type: 'Object',
-      root: false,
+      arg: "return",
+      type: "Object",
+      root: false
     },
     http: {
-      path: '/getMyReview',
-      verb: 'get',
-    },
+      path: "/getMyReview",
+      verb: "get"
+    }
   });
 
-  CoffeeServices.getMyReview = (cont) => {
-    const {
-      accessToken,
-    } = cont;
-    const {
-      userId,
-    } = accessToken;
+  CoffeeServices.getMyReview = cont => {
+    const { accessToken } = cont;
+    const { userId } = accessToken;
     const reviewModel = CoffeeServices.app.models.Review;
     return new Promise((resolve, reject) => {
-      reviewModel.find({
-        where: {
-          publisherId: userId,
+      reviewModel.find(
+        {
+          where: {
+            publisherId: userId
+          }
         },
-      }, (err, result) => {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(result);
+        (err, result) => {
+          if (err) {
+            reject(err);
+          } else {
+            resolve(result);
+          }
         }
-      });
+      );
     });
   };
 };
