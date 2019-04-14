@@ -16,7 +16,8 @@
   },
   "lint-staged": {
     "{common,server}/**/*.{js,jsx,ts,tsx}": [
-      "npm run lint",
+      "eslint --fix",
+      "prettier {common,server}/**/*.{js,jsx,json,ts,tsx,css,scss,md,html} --write",
       "git add"
     ]
   },
