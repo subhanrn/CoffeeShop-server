@@ -7,7 +7,7 @@
   },
   "scripts": {
     "precommit": "lint-staged",
-    "lint": "eslint .",
+    "lint": "./node_modules/.bin/eslint .",
     "start": "node .",
     "posttest": "npm run lint",
     "build:sdk": "./node_modules/.bin/lb-sdk server/server.js ./client/sdk -l angular2 -d ng2web -i disabled",
@@ -15,7 +15,7 @@
   },
   "lint-staged": {
     "{common,server}/**/*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
+      "./node_modules/.bin/eslint --fix",
       "git add"
     ]
   },
